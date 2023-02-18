@@ -57,14 +57,14 @@ public class JobTest {
 
     @Test
     public void testToStringStartsAndEndsWithNewLine(){
-        Job test_job7 = new Job(("Y2K Debugger"), new Employer("Initech"), new Location(), new PositionType("Office Drone"), new CoreCompetency("Not Caring"));
+        Job test_job7 = new Job(("Y2K Debugger"), new Employer("Initech"), new Location(null), new PositionType("Office Drone"), new CoreCompetency("Not Caring"));
         assertEquals('\n', test_job7.toString().charAt(0));
         assertEquals('\n', test_job7.toString().charAt(test_job7.toString().length()-1));
     }
 
     @Test
     public void testToStringHandlesEmptyField(){
-        Job test_job8 = new Job(("Y2K Debugger"), new Employer("Initech"), new Location(), new PositionType("Office Drone"), new CoreCompetency("Not Caring"));
+        Job test_job8 = new Job(("Y2K Debugger"), new Employer("Initech"), new Location(null), new PositionType("Office Drone"), new CoreCompetency("Not Caring"));
         assertEquals(("\n" +
                 "ID: 3\n" +
                 "Name: Y2K Debugger\n" +
