@@ -55,23 +55,47 @@ public class Job {
     }
 
     public String getName() {
-        return name;
+        if (name.isEmpty() || name.equals(" ")){
+            return "Data not available";
+        } else {
+            return name;
+        }
     }
 
-    public Employer getEmployer() {
-        return employer;
+    public Object getEmployer() {
+        if(employer.getValue() == null || employer.getValue().equals("")){
+            return "Data not available";
+        }
+        else {
+            return employer;
+        }
     }
 
-    public Location getLocation() {
-        return location;
+    public Object getLocation() {
+        if(location.getValue() == null || location.getValue().equals("")){
+            return "Data not available";
+        }
+        else {
+            return location;
+        }
     }
 
-    public PositionType getPositionType() {
-        return positionType;
+    public Object getPositionType() {
+        if(positionType.getValue() == null || positionType.getValue().equals("")){
+            return "Data not available";
+        }
+        else {
+            return positionType;
+        }
     }
 
-    public CoreCompetency getCoreCompetency() {
-        return coreCompetency;
+    public Object getCoreCompetency() {
+        if(coreCompetency.getValue() == null || coreCompetency.getValue().equals("")){
+            return "Data not available";
+        }
+        else {
+            return coreCompetency;
+        }
     }
 
     public void setName(String name) {
@@ -92,5 +116,16 @@ public class Job {
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
+    }
+
+    @Override
+    public String toString() {
+        return  "\n" +
+                "ID: " + this.getId() + "\n" +
+                "Name: " + this.getName() + "\n" +
+                "Employer: " + this.getEmployer() + "\n" +
+                "Location: " + this.getLocation() + "\n" +
+                "Position Type: " + this.getPositionType() + "\n" +
+                "Core Competency: " + this.getCoreCompetency() + "\n";
     }
 }

@@ -43,4 +43,23 @@ public class JobTest {
         assertFalse(test_job4.equals(test_job5));
     }
 
+    @Test
+    public void testCustomToStringMethod(){
+        Job test_job6 = new Job(("Y2K Debugger"), new Employer("Initech"), new Location(), new PositionType("Office Drone"), new CoreCompetency("Not Caring"));
+        assertEquals(("\n" +
+                "ID: 3\n" +
+                "Name: Y2K Debugger\n" +
+                "Employer: Initech\n" +
+                "Location: Data not available\n" +
+                "Position Type: Office Drone\n" +
+                "Core Competency: Not Caring\n"), test_job6.toString());
+    }
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine(){
+        Job test_job7 = new Job(("Y2K Debugger"), new Employer("Initech"), new Location(), new PositionType("Office Drone"), new CoreCompetency("Not Caring"));
+        assertEquals('\n', test_job7.toString().charAt(0));
+        assertEquals('\n', test_job7.toString().charAt(test_job7.toString().length()-1));
+    }
+
 }
