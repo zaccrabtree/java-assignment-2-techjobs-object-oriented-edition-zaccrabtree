@@ -62,36 +62,40 @@ public class Job {
         }
     }
 
-    public Object getEmployer() {
+    public Employer getEmployer() {
         if(employer.getValue() == null || employer.getValue().equals("")){
-            return "Data not available";
+            employer.setValue("Data not available");
+            return employer;
         }
         else {
             return employer;
         }
     }
 
-    public Object getLocation() {
+    public Location getLocation() {
         if(location.getValue() == null || location.getValue().equals("")){
-            return "Data not available";
+            location.setValue("Data not available");
+            return location;
         }
         else {
             return location;
         }
     }
 
-    public Object getPositionType() {
+    public PositionType getPositionType() {
         if(positionType.getValue() == null || positionType.getValue().equals("")){
-            return "Data not available";
+            positionType.setValue("Data not available");
+            return positionType;
         }
         else {
             return positionType;
         }
     }
 
-    public Object getCoreCompetency() {
+    public CoreCompetency getCoreCompetency() {
         if(coreCompetency.getValue() == null || coreCompetency.getValue().equals("")){
-            return "Data not available";
+            coreCompetency.setValue("Data not available");
+            return coreCompetency;
         }
         else {
             return coreCompetency;
